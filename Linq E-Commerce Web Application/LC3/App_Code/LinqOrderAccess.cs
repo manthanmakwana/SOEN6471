@@ -90,27 +90,7 @@ namespace LinqCommerce
 
         }
 
-        //LinqEcommerce
-        //SOEN-6471 - Milestone 4 change on 25/03/2015
-        //Modified by Abhinav Shah, Manthan Makwana, Mohnish Sethi, Niketh Jain and Shrey Jain
-        public void InsertBilling(ProfileGroupBilling Billing, int Order_ID)
-        {
-            LinqCommerceDataContext db = new LinqCommerceDataContext();
-
-            lc_BillingInfoTable bi = new lc_BillingInfoTable();
-            bi.FirstName = Billing.FirstName;
-            bi.LastName = Billing.LastName;
-            bi.MiddleName = Billing.MiddleName;
-            bi.NickName = Billing.NickName;
-            bi.OrderID = Order_ID;
-            bi.Phone = Billing.Phone;
-            bi.Prefix = Billing.Prefix;
-            bi.State = Billing.State;
-            bi.Zip = Billing.Zip;
-            db.lc_BillingInfoTables.InsertOnSubmit(bi);
-            db.SubmitChanges();
-
-        }
+        
 
         /// <summary>
         /// Inserts a record into the shipping info table
@@ -143,27 +123,7 @@ namespace LinqCommerce
         }
 
 
-        //LinqEcommerce
-        //SOEN-6471 - Milestone 4 change on 25/03/2015
-        //Modified by Abhinav Shah, Manthan Makwana, Mohnish Sethi, Niketh Jain and Shrey Jain
-        public void InsertShipping(ProfileGroupShipping Shipping, int OrderID)
-        {
-            LinqCommerceDataContext db = new LinqCommerceDataContext();
-            lc_ShippingInfoTable bi = new lc_ShippingInfoTable();
-            bi.FirstName = Shipping.FirstName;
-            bi.LastName = Shipping.LastName;
-            bi.MiddleName = Shipping.MiddleName;
-            bi.NickName = Shipping.NickName;
-            bi.OrderID = OrderID;
-            bi.Phone = Shipping.Phone;
-            bi.Prefix = Shipping.Prefix;
-            bi.State = Shipping.State;
-            bi.Zip = Shipping.Zip;
-            db.lc_ShippingInfoTables.InsertOnSubmit(bi);
-            db.SubmitChanges();
-
-        }
-
+        
         /// <summary>
         /// Gets all billing details for an lc_Order, based on an lc_Order ID (supplied in query string)
         /// </summary>

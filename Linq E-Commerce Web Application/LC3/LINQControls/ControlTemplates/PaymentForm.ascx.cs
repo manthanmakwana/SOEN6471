@@ -159,29 +159,6 @@ public partial class LINQControls_ControlTemplates_PaymentForm : System.Web.UI.U
             Amount, true, CreditCardNumber, Month + "/" + Year, CVC);
         //If lc_Order is successful, record it in the admin
 
-        //LinqEcommerce
-        //SOEN-6471 - Milestone 4 change on 25/03/2015
-        //Modified by Abhinav Shah, Manthan Makwana, Mohnish Sethi, Niketh Jain and Shrey Jain
-        ProfileCommon ProfileInfo = new ProfileCommon();
-        ProfileInfo.Billing.FirstName = BillFNTB.Text;
-        ProfileInfo.Billing.LastName = BillLNTB.Text; 
-        ProfileInfo.Billing.MiddleName = BillMNTB.Text; 
-        ProfileInfo.Billing.Phone = BillPhoneTB.Text; 
-        ProfileInfo.Billing.Prefix = BillPrefixCombo.Text; 
-        Profile.Billing.State = BillStateDropDown.Text;
-        Profile.Billing.Zip = BillZipCodeTB.Text;
-
-
-        //lo.InsertBilling(bill);
-        ProfileInfo.Shipping.FirstName = ShipFNTB.Text;
-        ProfileInfo.Shipping.LastName = ShipLNTB.Text;
-        ProfileInfo.Shipping.MiddleName = ShipMNTB.Text;
-        ProfileInfo.Shipping.Phone = ShipPhoneTB.Text;
-        ProfileInfo.Shipping.Prefix = ShipPrefixCombo.Text;
-        Profile.Shipping.State = ShipStateDropDown.Text;
-        Profile.Shipping.Zip = ShipZipCodeTB.Text;
-
-
         if (t)
         {
             
@@ -192,12 +169,7 @@ public partial class LINQControls_ControlTemplates_PaymentForm : System.Web.UI.U
             lo.InsertShipping(ShipFNTB.Text, ShipLNTB.Text, ShipMNTB.Text, "", lc_OrderID,
                 ShipPhoneTB.Text, ShipPrefixCombo.Text, ShipStateDropDown.Text, ShipZipCodeTB.Text);
 
-            //LinqEcommerce
-            //SOEN-6471 - Milestone 4 change on 25/03/2015
-            //Modified by Abhinav Shah, Manthan Makwana, Mohnish Sethi, Niketh Jain and Shrey Jain
-            lo.InsertBilling(ProfileInfo.Billing, lc_OrderID);
-
-            lo.InsertShipping(ProfileInfo.Shipping, lc_OrderID);
+            
         }
         Redirect(message);
     }
